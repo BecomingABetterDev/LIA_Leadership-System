@@ -23,8 +23,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "http://localhost:8080", // frontend URL
-  credentials: true,               // allow cookies/auth headers
+  origin: process.env.FRONTEND_URL, // use FRONTEND_URL from .env
+  credentials: true,                // allow cookies/auth headers
 }));
 app.use(cookieParser()); 
 app.use(express.json({ limit: "10mb" }));
