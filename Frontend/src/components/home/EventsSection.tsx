@@ -245,6 +245,16 @@ export function EventsSection() {
           >
             {upcomingEvents.map((event) => {
               const applied = hasUserApplied(event);
+              const isFull =
+                event.maxApplicants > 0 &&
+                event.applicants.length >= event.maxApplicants;
+              const isClosed = event.isApplicationEnded || isFull;
+              {
+                event.maxApplicants > 0 &&
+                event.applicants.length >= event.maxApplicants
+                  ? "No Spots Available"
+                  : "Applications Closed";
+              }
 
               return (
                 <Card
@@ -315,10 +325,7 @@ export function EventsSection() {
                         className="w-full justify-center py-2.5 border-warning/30 text-warning bg-warning/5"
                       >
                         <Ban className="h-4 w-4 mr-2" />
-                        {event.maxApplicants > 0 &&
-                        event.applicants.length >= event.maxApplicants
-                          ? "No Spots Available"
-                          : "Applications Closed"}
+                        {isFull ? "No Spots Available" : "Applications Closed"}
                       </Badge>
                     ) : isStudentAuthenticated ? (
                       <Button
