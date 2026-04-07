@@ -23,9 +23,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  // Fallback to the string if the ENV isn't loading correctly for a second
-  //origin: process.env.FRONTEND_URL || "https://lia-leadership-system-production.vercel.app/",
-  origin: "http://localhost:8080",
+  origin: process.env.FRONTEND_URL || "https://lia-leadership-system-production.vercel.app/",
   credentials: true,
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
