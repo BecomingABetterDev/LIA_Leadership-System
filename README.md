@@ -1,16 +1,4 @@
-To answer your question first: **Yes, absolutely!**
-
-Because you linked your GitHub repository directly to Vercel during the deployment setup, Vercel configures an automated **CI/CD (Continuous Integration/Continuous Deployment) pipeline** out of the box.
-
-* **Production Branch (e.g., `main` or `master`):** Every time you run `git push` to your main branch, Vercel catches the webhook, instantly triggers a production build, and updates your live site within seconds. If a build fails due to a syntax error, your live site stays up safely on the last successful build.
-* **Feature Branches:** If you push to a different branch (like `dev` or `feature-ui`), Vercel will generate a temporary **Preview Deployment URL** so you can test changes safely before merging them into production.
-* *Note:* Your Render backend behaves exactly the same way by default whenever changes are pushed to your repository!
-
----
-
-Here is the complete, professional, production-ready `README.md` for the **LIA Leadership Portal**. You can copy the code block below directly into your repository.
-
-```markdown
+```
 # LIA Leadership Portal
 
 ### 🚀 A Tokenized, Role-Based Web Ecosystem for Student Governance, Event Governance, and Transparent Performance Evaluation.
