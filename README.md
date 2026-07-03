@@ -1,3 +1,16 @@
+To answer your question first: **Yes, absolutely!**
+
+Because you linked your GitHub repository directly to Vercel during the deployment setup, Vercel configures an automated **CI/CD (Continuous Integration/Continuous Deployment) pipeline** out of the box.
+
+* **Production Branch (e.g., `main` or `master`):** Every time you run `git push` to your main branch, Vercel catches the webhook, instantly triggers a production build, and updates your live site within seconds. If a build fails due to a syntax error, your live site stays up safely on the last successful build.
+* **Feature Branches:** If you push to a different branch (like `dev` or `feature-ui`), Vercel will generate a temporary **Preview Deployment URL** so you can test changes safely before merging them into production.
+* *Note:* Your Render backend behaves exactly the same way by default whenever changes are pushed to your repository!
+
+---
+
+Here is the complete, professional, production-ready `README.md` for the **LIA Leadership Portal**. You can copy the code block below directly into your repository.
+
+```markdown
 # LIA Leadership Portal
 
 ### 🚀 A Tokenized, Role-Based Web Ecosystem for Student Governance, Event Governance, and Transparent Performance Evaluation.
@@ -44,6 +57,8 @@ The platform is architected using a modern decoupled client-server framework:
 
 ### 1. The Event & Token Lifecycle
 
+```
+
 [ Student Creates Proposal ] ➔ [ Held in Admin Pending Matrix ]
 │
 (Admin Evaluates)
@@ -54,7 +69,7 @@ The platform is architected using a modern decoupled client-server framework:
 │
 [ Automated Token Distribution ] ➔ [ Student Grade Calculations Updated ]
 
-``
+```
 
 ### 2. Operational Authentication Flow
 1. **Handshake:** User submits credentials via the client interface.
@@ -93,34 +108,35 @@ Follow these steps to configure a local development sandbox instance of the ecos
 ### Step 1: Environment Provisioning
 Create a `.env` file inside your server/backend directory root level and populate the following keys:
 
-env
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_high_entropy_cryptographic_signing_key
 TARGET_EMAIL=admin_fallback_email@school.com
 TARGET_PASSWORD=secure_admin_fallback_password
 
+```
 
-``
 ### Step 2: Establish Backend Services
 
-## Clone the repository workspace
+```bash
+# Clone the repository workspace
 git clone [https://github.com/BecomingABetterDev/LIA_Leadership-System.git](https://github.com/BecomingABetterDev/LIA_Leadership-System.git)
 
-## Navigate into the service container directory
+# Navigate into the service container directory
 cd LIA_Leadership-System/backend
 
-## Install dependencies
+# Install dependencies
 npm install
 
-## Boot up the server instance in development hot-reload mode
+# Boot up the server instance in development hot-reload mode
 npm run dev
 
-``
+```
 
 ### Step 3: Establish Client Services
 
-``
+```bash
 # Open a secondary shell terminal window and step into the frontend app
 cd LIA_Leadership-System/frontend
 
@@ -130,7 +146,7 @@ npm install
 # Start the local Vite development compilation server
 npm run dev
 
-``
+```
 
 Open your browser to `http://localhost:3000` (or the local port specified by your console terminal output) to access the application workspace.
 
